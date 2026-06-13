@@ -46,7 +46,7 @@ def minimax(board, depth, is_maximizing, alpha, beta):
             best_score = max(score, best_score)
             alpha = max(alpha, best_score)
             if beta <= alpha:
-                break  # Beta cutoff — prune remaining branches
+                break  
         return best_score
     else:
         best_score = 100
@@ -57,7 +57,7 @@ def minimax(board, depth, is_maximizing, alpha, beta):
             best_score = min(score, best_score)
             beta = min(beta, best_score)
             if beta <= alpha:
-                break  # Alpha cutoff — prune remaining branches
+                break  
         return best_score
 
 
@@ -113,7 +113,6 @@ def play_game():
             row, col = get_human_move(board)
             board[row][col] = "X"
         else:
-            print("AI is thinking...")
             row, col = get_ai_move(board)
             board[row][col] = "O"
             print(f"AI played: row {row + 1}, col {col + 1}")
@@ -139,6 +138,3 @@ def play_game():
     else:
         print("Thanks for playing!")
 
-
-if __name__ == "__main__":
-    play_game()
